@@ -3,9 +3,8 @@ import type { FormsProp } from "@/components/atoms/Forms/props";
 import "@/components/atoms/Forms/Text/style.scss";
 import { ref } from "vue";
 
-
-defineProps<FormsProp>();
-const model = ref<string>("");
+const _props = defineProps<FormsProp>();
+const model = ref<string | undefined>(_props.modelValue);
 </script>
 <template>
   <div class="atomsFormsText">
@@ -18,7 +17,9 @@ const model = ref<string>("");
       v-model="model"
       :placeholder="placeholder"
       class="atomsFormsText__input"
-      @input="$emit(`update:${value}`, ($event.target as HTMLInputElement).value )"
+      @input="
+        $emit(`update:${value}`, ($event.target as HTMLInputElement).value)
+      "
     />
   </div>
 </template>

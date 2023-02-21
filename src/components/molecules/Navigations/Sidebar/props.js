@@ -5,6 +5,6 @@ export default {
   },
   close: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 };
