@@ -1,6 +1,6 @@
 <template>
-  <OrganismsLeftPanel :person-info="personInfo" />
-  <OrganismsRightPanel :person-info="personInfo" />
+  <OrganismsLeftPanel :person-info="getFormatData" />
+  <OrganismsRightPanel :person-info="getFormatData" />
 </template>
 <script setup lang="ts">
 import OrganismsLeftPanel from "@/components/organisms/LeftPanel/Index.vue";
@@ -10,5 +10,5 @@ import { storeToRefs } from "pinia";
 
 const personInfoStore = usePersonInfoStore();
 personInfoStore.setData();
-const { personInfo } = storeToRefs(personInfoStore);
+const { getFormatData } = storeToRefs(personInfoStore);
 </script>

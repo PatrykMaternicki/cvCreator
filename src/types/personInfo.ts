@@ -10,3 +10,17 @@ export interface PersonInfo {
   city?: string;
   fullAddress?: string
 }
+
+
+export enum ALLOWED_KEY {
+  firstName, 
+  lastName,
+  mobilePhone,
+  email,
+  street,
+  numberOfHouse,
+  numberOfFlat,
+  postCode,
+  city,
+  fullAddress
+}
