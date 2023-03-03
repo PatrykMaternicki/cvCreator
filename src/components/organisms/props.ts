@@ -1,5 +1,5 @@
 import type { PersonInfo } from "@/types/personInfo";
 
-export interface LeftPanelProps {
+export interface DataProps {
   personInfo: PersonInfo;
 }

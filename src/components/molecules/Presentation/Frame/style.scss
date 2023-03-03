@@ -1,0 +1,15 @@
+.moleculesPresentationFrame {
+  &__list {
+    list-style: none;
+  }
+
+  &__boldText {
+    font-weight: 700;
+  }
+
+  &__item {
+    font-family: $frame-font-family;
+    font-weight: 400;
+    padding: 5px 0;
+  }
+}

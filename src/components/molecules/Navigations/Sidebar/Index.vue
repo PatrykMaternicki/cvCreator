@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import props from "@/components/molecules/Navigations/Sidebar/props";
+import type { SidebarNavigationsProps } from "@/components/molecules/Navigations/Sidebar/props";
 import "@/components/molecules/Navigations/Sidebar/style.scss";
-defineProps(props);
+
+withDefaults(defineProps<SidebarNavigationsProps>(), {
+  width: "400px",
+  close: false,
+});
 </script>
 <template>
   <aside

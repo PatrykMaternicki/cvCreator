@@ -8,4 +8,5 @@ export interface PersonInfo {
   numberOfFlat?: string;
   postCode?: string;
   city?: string;
+  fullAddress?: string
 }

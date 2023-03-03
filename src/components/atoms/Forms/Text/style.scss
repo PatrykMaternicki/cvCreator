@@ -1,40 +1,43 @@
 .atomsFormsText {
-  color: var(--secondary);
+  color: $input-text-color;
 
   &__label {
-    font: normal normal 600 16px/22px Open Sans;
-    margin-bottom: 4px;
+    font-family: $input-text-font-family;
+    margin-bottom: 10px;
   }
 
   &__input {
     font: normal normal normal 16px/22px Open Sans;
     transition: border-color 0.5s;
-    border: 1px solid var(--secondary);
+    border: 1px solid $input-border-color;
     width: 100%;
     border-radius: 6px;
     padding: 10px 16px 8px 16px;
+    background-color: $input-border-background;
+    color: $input-value-color;
     display: block;
+    margin-top: 10px;
 
     ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      color: var(--secondary-200);
+      color: $input-value-color-placeholder;
     }
     ::-moz-placeholder {
       /* Firefox 19+ */
-      color: var(--secondary-200);
+      color: $input-value-color-placeholder;
     }
     :-ms-input-placeholder {
       /* IE 10+ */
-      color: var(--secondary-200);
+      color: $input-value-color-placeholder;
     }
     :-moz-placeholder {
       /* Firefox 18- */
-      color: var(--secondary-200);
+      color: $input-value-color-placeholder;
     }
 
     &:focus {
       outline: none !important;
-      border-color: var(--primary);
+      border-color: $input-border-color-hover;
     }
   }
 }

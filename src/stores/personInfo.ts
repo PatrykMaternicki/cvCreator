@@ -7,6 +7,8 @@ export const usePersonInfoStore = defineStore({
   actions: {
     setData() {
       this.personInfo = data.personInfo;
+      const {street, numberOfFlat, numberOfHouse, postCode} = this.personInfo;
+      this.personInfo.fullAddress = `ul.${street} ${numberOfHouse}${numberOfFlat ? `/${numberOfFlat}` : ''} ${postCode}`
     },
   },
 });
