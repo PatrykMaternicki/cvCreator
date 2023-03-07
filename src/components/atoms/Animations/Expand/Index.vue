@@ -11,12 +11,8 @@
 <script setup lang="ts">
 import "@/components/atoms/Animations/Expand/style.scss";
 import { AllowedStyleProps } from "@/types/dom";
+import { setStyle } from '@/helpers/dom';
 
-const setStyle = (
-  element: HTMLBaseElement,
-  prop: AllowedStyleProps,
-  value: string
-) => (element.style[prop] = value);
 const enter = (element: HTMLBaseElement) => {
   const width = getComputedStyle(element).width;
   setStyle(element, AllowedStyleProps.width, width);
