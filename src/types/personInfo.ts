@@ -8,12 +8,11 @@ export interface PersonInfo {
   numberOfFlat?: string;
   postCode?: string;
   city?: string;
-  fullAddress?: string
+  fullAddress?: string;
 }
 
-
 export enum ALLOWED_KEY {
-  firstName, 
+  firstName,
   lastName,
   mobilePhone,
   email,
@@ -22,5 +21,5 @@ export enum ALLOWED_KEY {
   numberOfFlat,
   postCode,
   city,
-  fullAddress
+  fullAddress,
 }

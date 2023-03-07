@@ -1,6 +1,9 @@
 <template>
   <div class="organismsRightPanel">
-    <PresentationFrame :data="personInfo" :section="PresentationDictionary.personalInfo" />
+    <PresentationFrame
+      :data="personInfo"
+      :section="PresentationDictionary.personalInfo"
+    />
   </div>
 </template>
 <script setup lang="ts">

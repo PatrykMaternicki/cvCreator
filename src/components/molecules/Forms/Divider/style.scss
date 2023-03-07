@@ -1,0 +1,35 @@
+.moleculesFormsDivider {
+  &__button {
+    background-color: transparent;
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 7px;
+  }
+
+  &__topWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    color: $divider-title-color;
+    font-family: $divider-font-family;
+  }
+
+  &__line {
+    margin-bottom: 0;
+    margin-top: 4px;
+    border-color: $divider-title-color;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    transition: height 0.5s;
+  }
+}

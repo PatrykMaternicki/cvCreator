@@ -1,8 +1,10 @@
-<script setup>
-import { props } from "@/components/atoms/Icons/Triangle/props.js";
+<script lang="ts" setup>
+import type { Props } from "@/components/atoms/Icons/Triangle/props";
 import "@/components/atoms/Icons/Triangle/style.scss";
 import { computed } from "vue";
-const _props = defineProps(props);
+const _props = withDefaults(defineProps<Props>(), {
+  rotate: false,
+});
 const handleModifier = computed(() =>
   _props.rotate ? "atomsIconsTriangle--rotate" : null
 );
