@@ -5,5 +5,5 @@ export const setStyle = (
   prop: AllowedStyleProps,
   value: string
 ) => {
-    element.style[AllowedStyleProps[prop]] = value
+  element.style[AllowedStyleProps[prop]] = value;
 };

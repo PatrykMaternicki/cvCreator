@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import type { FormsProp } from "@/components/atoms/Forms/props";
 import "@/components/atoms/Forms/Text/style.scss";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const _props = defineProps<FormsProp>();
 const model = ref<string | undefined>(_props.modelValue);
+watch(
+  () => _props.modelValue,
+  () => (model.value = _props.modelValue)
+);
 </script>
 <template>
   <div class="atomsFormsText">

@@ -1,0 +1,22 @@
+.atomsPresentationTag {
+  background-color: transparent;
+  display: inline-block;
+  border: 1px solid var(--secondary);
+  color: $tag-color;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: $tag-font-family;
+
+  &:hover {
+    background-color: var(--white);
+    color: var(--primary);
+  }
+
+  &__slot {
+    margin-left: 6px;
+  }
+}

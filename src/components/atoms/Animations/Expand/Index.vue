@@ -1,17 +1,12 @@
 <template>
-  <transition
-    name="expand"
-    @enter="enter"
-    @after-enter="afterEnter"
-    @leave="leave"
-  >
+  <transition name="expand" @enter="enter" @leave="leave">
     <slot />
   </transition>
 </template>
 <script setup lang="ts">
 import "@/components/atoms/Animations/Expand/style.scss";
 import { AllowedStyleProps } from "@/types/dom";
-import { setStyle } from '@/helpers/dom';
+import { setStyle } from "@/helpers/dom";
 
 const enter = (element: HTMLBaseElement) => {
   const width = getComputedStyle(element).width;
@@ -32,8 +27,6 @@ const enter = (element: HTMLBaseElement) => {
   );
 };
 
-const afterEnter = (element: HTMLBaseElement) =>
-  setStyle(element, AllowedStyleProps.height, "0px");
 const leave = (element: HTMLBaseElement) => {
   const height = getComputedStyle(element).height;
   setStyle(element, AllowedStyleProps.height, height);
@@ -44,11 +37,3 @@ const leave = (element: HTMLBaseElement) => {
   );
 };
 </script>
-<style scoped>
-* {
-  will-change: height;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-</style>
