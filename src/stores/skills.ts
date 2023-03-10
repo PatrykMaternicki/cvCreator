@@ -18,10 +18,8 @@ export const useSkillStore = defineStore("skills", {
       console.log(this.data[index].tags);
     },
     removeTag(tag: string, index: number) {
-      this.data = this.data.map((item) => ({
-        ...item,
-        tags: item.tags.filter((item) => item !== tag),
-      }));
+      const tags = this.data[index].tags.filter((item) => item !== tag);
+      this.data[index].tags = tags;
       this.removeSkill();
     },
   },
