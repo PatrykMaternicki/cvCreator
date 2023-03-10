@@ -4,6 +4,7 @@ import type { Skills } from "@/types/skills";
 export interface DataProps {
   personInfo: PersonInfo;
   skills: Array<Skills>;
+  hobbies: string[];
 }
 
 export interface DataFormsPersonInfo {
@@ -12,6 +13,10 @@ export interface DataFormsPersonInfo {
 
 export interface DataFormsSkills {
   skills: Array<Skills>;
+}
+
+export interface HobbiesProps {
+  hobbies: string[]
 }
 
 export interface TagsProps {

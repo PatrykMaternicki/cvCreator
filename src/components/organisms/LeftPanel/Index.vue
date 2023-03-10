@@ -4,8 +4,9 @@
       <h1 class="organismsLeftPanel__title">CV Creator</h1>
       <div class="organismsLeftPanel__container">
         <FormsPersonInfo :person-info="personInfo" />
+        <FormsSkills :skills="skills" />
+        <FormsHobbies :hobbies="hobbies" />
       </div>
-      <FormsSkills :skills="skills" />
     </div>
   </Sidebar>
 </template>
@@ -13,6 +14,7 @@
 import FormsPersonInfo from "@/components/organisms/LeftPanel/Forms/PersonInfo.vue";
 import FormsSkills from "@/components/organisms/LeftPanel/Forms/Skills.vue";
 import Sidebar from "@/components/molecules/Navigations/Sidebar/Index.vue";
+import FormsHobbies from "@/components/organisms/LeftPanel/Forms/Hobbies.vue";
 import type { DataProps } from "@/components/organisms/props";
 const props = defineProps<DataProps>();
 console.log(props.skills[0]);

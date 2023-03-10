@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 import data from "@/test-local.json";
 import type { PersonInfo } from "@/types/personInfo";
 import { ALLOWED_KEY } from "@/types/personInfo";
-import { useSkillStore } from "./skills";
+import { useSkillStore } from "@/stores/skills";
+import { useHobbiesStore } from "@/stores/hobbies";
 const formatAddress = (data: PersonInfo) =>
   `ul.${data.street} ${data.numberOfHouse}${
     data.numberOfFlat ? `/${data.numberOfFlat}` : ""
@@ -13,7 +14,9 @@ export const usePersonInfoStore = defineStore({
   actions: {
     setData() {
       const { setSkills } = useSkillStore();
+      const { setHobbies } = useHobbiesStore();
       setSkills(data.skills);
+      setHobbies(data.hobbies);
       this.personInfo = data.personInfo;
     },
 

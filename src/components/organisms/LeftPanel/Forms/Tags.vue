@@ -40,7 +40,7 @@ const input = ref<HTMLInputElement>();
 const skillsStore = useSkillStore();
 const props = defineProps<TagsProps>();
 
-const handleClick = (index: number) => {
+const handleClick = () => {
   edited.value = true;
   nextTick(() => {
     input.value && input.value.focus();
