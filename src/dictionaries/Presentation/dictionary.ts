@@ -4,13 +4,34 @@ export type PresentationSection = {
 };
 
 interface Dictionary {
-  personalInfo: Array<PresentationSection>;
+  dictionary: Array<PresentationSection>;
 }
 
-export const PresentationDictionary: Dictionary = {
-  personalInfo: [
+export const PersonelInfoPresentationDictionary: Dictionary = {
+  dictionary: [
     { key: "mobilePhone", label: "Mobile" },
     { key: "email", label: null },
     { key: "fullAddress", label: null },
+  ],
+};
+
+export const ProjectsPresentationDictionary: Dictionary = {
+  dictionary: [
+    {
+      key: "title",
+      label: null,
+    },
+    {
+      key: "technology",
+      label: "Technology",
+    },
+    {
+      key: "task",
+      label: "Task",
+    },
+    {
+      key: "link",
+      label: "Link",
+    },
   ],
 };

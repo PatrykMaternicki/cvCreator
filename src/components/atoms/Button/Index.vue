@@ -1,6 +1,7 @@
 <template>
   <button
     class="atomsButton"
+    :disabled="disabled"
     :class="{ rounded: rounded, outline: outline, onlyIcon: isText }"
     @click="$event => $emit('clicked', $event.target as HTMLBaseElement)"
   >

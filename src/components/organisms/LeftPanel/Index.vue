@@ -6,6 +6,7 @@
         <FormsPersonInfo :person-info="personInfo" />
         <FormsSkills :skills="skills" />
         <FormsHobbies :hobbies="hobbies" />
+        <FormsProjects :projects="projects" />
       </div>
     </div>
   </Sidebar>
@@ -15,9 +16,9 @@ import FormsPersonInfo from "@/components/organisms/LeftPanel/Forms/PersonInfo.v
 import FormsSkills from "@/components/organisms/LeftPanel/Forms/Skills.vue";
 import Sidebar from "@/components/molecules/Navigations/Sidebar/Index.vue";
 import FormsHobbies from "@/components/organisms/LeftPanel/Forms/Hobbies.vue";
+import FormsProjects from "@/components/organisms/LeftPanel/Forms/Projects.vue";
 import type { DataProps } from "@/components/organisms/props";
 const props = defineProps<DataProps>();
-console.log(props.skills[0]);
 </script>
 <style lang="scss">
 .organismsLeftPanel {

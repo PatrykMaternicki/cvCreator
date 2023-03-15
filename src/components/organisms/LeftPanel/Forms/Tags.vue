@@ -2,7 +2,7 @@
   <div class="organismsLeftPanelSkillsFormsTags">
     <div>
       <PresentationTag
-        @click="skillsStore.removeTag(tag, index)"
+        @click="store.removeTag(tag, index)"
         :value="tag"
         v-for="tag in tags"
       >
@@ -30,14 +30,12 @@
 <script setup lang="ts">
 import AtomsButton from "@/components/atoms/Button/Index.vue";
 import { ref, nextTick } from "vue";
-import { useSkillStore } from "@/stores/skills";
 import type { TagsProps } from "@/components/organisms/props";
 import PresentationTag from "@/components/atoms/Presentation/Tag/Index.vue";
 
 const edited = ref(false);
 const newTag = ref("");
 const input = ref<HTMLInputElement>();
-const skillsStore = useSkillStore();
 const props = defineProps<TagsProps>();
 
 const handleClick = () => {
@@ -48,7 +46,7 @@ const handleClick = () => {
 };
 
 const handleChange = () => {
-  skillsStore.addTag(newTag.value, props.index);
+  props.store.addTag(newTag.value, props.index);
   edited.value = false;
   newTag.value = "";
 };

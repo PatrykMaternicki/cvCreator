@@ -1,41 +1,20 @@
 <template>
   <div class="organismsRightPanel">
-    <PresentationFrame
-      :data="personInfo"
-      :section="PresentationDictionary.personalInfo"
-    />
-    <PresentationFrame :data="mapSkills" :section="mapSectionSkills" />
-    <PresentationFrame :data="mapHobbies" :section="mapSectionHobbies"/>
+    <PresentationPersonInfo :data="personInfo" />
+    <PresentationSkills :data="skills" />
+    <PresentationHobbies :data="hobbies" />
+    <template :key="index" v-for="(project, index) in projects">
+      <PresentationProject :project="project" />
+    </template>
   </div>
 </template>
 <script setup lang="ts">
 import type { DataProps } from "@/components/organisms/props";
-import PresentationFrame from "@/components/molecules/Presentation/Frame/Index.vue";
-import { PresentationDictionary } from "@/dictionaries/Presentation/dictionary";
-import { computed } from "vue";
-const props = defineProps<DataProps>();
-const mapSkills = computed(() =>
-  props.skills.reduce(
-    (prev, current, index) => ({
-      ...prev,
-      [`item${index}`]: current.tags.join(", "),
-    }),
-    {}
-  )
-);
-
-const mapSectionHobbies = computed(() => props.hobbies.map((item, index) => ({
-  key: `item${index}`,
-  label: ''
-})))
-
-const mapHobbies = computed(() => ({ item0: props.hobbies.join(', ')}))
-
-const mapSectionSkills = computed(() => props.skills.map((item, index) => ({
-    key: `item${index}`,
-    label: item.label,
-  }))
-);
+import PresentationProject from '@/components/organisms/RightPanel/Partials/Project.vue';
+import PresentationSkills from '@/components/organisms/RightPanel/Partials/Skills.vue';
+import PresentationHobbies from '@/components/organisms/RightPanel/Partials/Hobbies.vue';
+import PresentationPersonInfo from '@/components/organisms/RightPanel/Partials/PersonInfo.vue';
+defineProps<DataProps>();
 </script>
 <style lang="scss">
 .organismsRightPanel {

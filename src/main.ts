@@ -6,8 +6,9 @@ import {
   faUserSecret,
   faPlus,
   faMinus,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faUserSecret, faPlus, faMinus);
+library.add(faUserSecret, faPlus, faMinus, faXmark);
 
 import "@/assets/scss/index.scss";
 import App from "@/App.vue";

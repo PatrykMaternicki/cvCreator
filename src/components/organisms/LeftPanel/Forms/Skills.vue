@@ -29,7 +29,11 @@
           <h3 class="organismsLeftPanelSkillsForms__title">
             {{ skill.label }}
           </h3>
-          <OrganismsLeftFormsTags :index="index" :tags="skill.tags" />
+          <OrganismsLeftFormsTags
+            :store="skillsStore"
+            :index="index"
+            :tags="skill.tags"
+          />
         </li>
       </ul>
     </div>

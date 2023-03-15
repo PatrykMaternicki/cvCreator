@@ -1,8 +1,12 @@
 <template>
-  <FormsDivider title="Zainteresowania"> 
+  <FormsDivider title="Zainteresowania">
     <div class="organismsLeftPanelSkillsFormsHobbies">
       <div>
-        <PresentationTag  @click="hobbiesStore.removeHobby(hobby)" :value="hobby" v-for="hobby in hobbies">
+        <PresentationTag
+          @click="hobbiesStore.removeHobby(hobby)"
+          :value="hobby"
+          v-for="hobby in hobbies"
+        >
           <font-awesome-icon icon="fa-solid fa-minus" />
         </PresentationTag>
         <PresentationTag v-show="edited" value="">
@@ -27,9 +31,9 @@
 import FormsDivider from "@/components/molecules/Forms/Divider/Index.vue";
 import type { HobbiesProps } from "@/components/organisms/props";
 import PresentationTag from "@/components/atoms/Presentation/Tag/Index.vue";
-import AtomsButton from '@/components/atoms/Button/Index.vue';
+import AtomsButton from "@/components/atoms/Button/Index.vue";
 import { useHobbiesStore } from "@/stores/hobbies";
-import { ref, nextTick } from 'vue';
+import { ref, nextTick } from "vue";
 const hobbiesStore = useHobbiesStore();
 const newHobby = ref("");
 const edited = ref(false);
@@ -39,8 +43,7 @@ const handleChange = () => {
   hobbiesStore.addHobby(newHobby.value);
   edited.value = false;
   newHobby.value = "";
-}
-
+};
 
 const handleClick = () => {
   edited.value = true;
@@ -49,7 +52,7 @@ const handleClick = () => {
   });
 };
 
-defineProps<HobbiesProps>()
+defineProps<HobbiesProps>();
 </script>
 <style lang="scss">
 .organismsLeftPanelSkillsFormsHobbies {
@@ -81,5 +84,4 @@ defineProps<HobbiesProps>()
     }
   }
 }
-
 </style>

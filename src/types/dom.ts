@@ -1,6 +1,1 @@
-export enum AllowedStyleProps {
-  width,
-  position,
-  visibility,
-  height,
-}
+export type AllowedStyleProps = "width" | "position" | "visibility" | "height";

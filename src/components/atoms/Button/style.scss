@@ -16,6 +16,11 @@
     color: var(--primary);
   }
 
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
   &.rounded {
     border-radius: 6px;
   }

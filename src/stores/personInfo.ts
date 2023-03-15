@@ -4,6 +4,7 @@ import type { PersonInfo } from "@/types/personInfo";
 import { ALLOWED_KEY } from "@/types/personInfo";
 import { useSkillStore } from "@/stores/skills";
 import { useHobbiesStore } from "@/stores/hobbies";
+import { useProjectsStore } from "./projects";
 const formatAddress = (data: PersonInfo) =>
   `ul.${data.street} ${data.numberOfHouse}${
     data.numberOfFlat ? `/${data.numberOfFlat}` : ""
@@ -15,8 +16,10 @@ export const usePersonInfoStore = defineStore({
     setData() {
       const { setSkills } = useSkillStore();
       const { setHobbies } = useHobbiesStore();
+      const { setProjects } = useProjectsStore();
       setSkills(data.skills);
       setHobbies(data.hobbies);
+      setProjects(data.projects);
       this.personInfo = data.personInfo;
     },
 
