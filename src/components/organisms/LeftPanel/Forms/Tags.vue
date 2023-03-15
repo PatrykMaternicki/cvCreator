@@ -2,7 +2,7 @@
   <div class="organismsLeftPanelSkillsFormsTags">
     <div>
       <PresentationTag
-        @click="store.removeTag(tag, index)"
+        @click="props.store.removeTag(tag, index)"
         :value="tag"
         v-for="tag in tags"
       >

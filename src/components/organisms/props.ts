@@ -1,3 +1,4 @@
+import type { TagsStore } from "@/stores/projects";
 import type { PersonInfo } from "@/types/personInfo";
 import type { Project } from "@/types/project";
 import type { Skills } from "@/types/skills";
@@ -46,5 +47,5 @@ export interface HobbiesProps {
 export interface TagsProps {
   index: number;
   tags: string[];
-  store: Store;
+  store: TagsStore;
 }

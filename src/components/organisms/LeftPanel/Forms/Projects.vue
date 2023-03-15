@@ -44,12 +44,13 @@ import FormsProjectNew from "@/components/organisms/LeftPanel/Forms/Project/New.
 import { useProjectsStore } from "@/stores/projects";
 import AtomsButton from "@/components/atoms/Button/Index.vue";
 import type { ProjectsProps } from "@/components/organisms/props";
-
+import { useCreateTagsComponent } from '@/components/organisms/LeftPanel/Forms/Hoc/tags';
 const projectsStore = useProjectsStore();
 defineProps<ProjectsProps>();
+const TagsComponent = useCreateTagsComponent(projectsStore)
 </script>
 <style lang="scss">
-.organismsLeftPanelProjectsForms {
+.organismsLeftPanelProjectsForms { 
   &__container {
     display: flex;
     align-items: flex-end;
