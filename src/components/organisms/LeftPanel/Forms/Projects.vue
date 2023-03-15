@@ -1,6 +1,6 @@
 <template>
   <FormsDivider title="Projekty">
-    <NewFormsProject
+    <FormsProjectNew
       :project="{
         title: '',
         link: '',
@@ -25,7 +25,7 @@
           </div>
         </h3>
         <div class="organismsLeftPanelProjectsForms__container">
-          <FormsProject :index="index" :project="project" />
+          <FormsProjectCurrent :index="index" :project="project" />
         </div>
         <OrganismsLeftFormsTags
           :store="projectsStore"
@@ -39,8 +39,8 @@
 <script lang="ts" setup>
 import FormsDivider from "@/components/molecules/Forms/Divider/Index.vue";
 import OrganismsLeftFormsTags from "@/components/organisms/LeftPanel/Forms/Tags.vue";
-import FormsProject from "@/components/organisms/LeftPanel/Forms/Project.vue";
-import NewFormsProject from "@/components/organisms/LeftPanel/Forms/newProject.vue";
+import FormsProjectCurrent from "@/components/organisms/LeftPanel/Forms/Project/Current.vue";
+import FormsProjectNew from "@/components/organisms/LeftPanel/Forms/Project/New.vue";
 import { useProjectsStore } from "@/stores/projects";
 import AtomsButton from "@/components/atoms/Button/Index.vue";
 import type { ProjectsProps } from "@/components/organisms/props";
