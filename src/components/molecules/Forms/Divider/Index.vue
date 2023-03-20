@@ -22,7 +22,7 @@ import AnimationExpand from "@/components/atoms/Animations/Expand/Index.vue";
 import type { Props } from "@/components/molecules/Forms/Divider/props";
 import IconsTriangle from "@/components/atoms/Icons/Triangle/Index.vue";
 import { ref } from "vue";
-defineProps<Props>();
-const rotate = ref(false);
+const props = withDefaults(defineProps<Props>(), { close: true });
+const rotate = ref(props.close);
 const handleRotate = () => (rotate.value = !rotate.value);
 </script>

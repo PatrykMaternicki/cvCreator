@@ -2,6 +2,8 @@ import type { TagsStore } from "@/stores/projects";
 import type { PersonInfo } from "@/types/personInfo";
 import type { Project } from "@/types/project";
 import type { Skills } from "@/types/skills";
+import type { CommercialProject } from "@/types/commercialProject";
+import type { Job } from "@/types/job";
 import type { Store } from "pinia";
 
 export interface DataProps {
@@ -9,6 +11,7 @@ export interface DataProps {
   skills: Array<Skills>;
   hobbies: string[];
   projects: Array<Project>;
+  jobs: Array<Job>;
 }
 
 export interface DataFormsPersonInfo {
@@ -44,8 +47,23 @@ export interface HobbiesProps {
   hobbies: string[];
 }
 
+export interface JobsProps {
+  jobs: Array<Job>;
+}
+
+export interface CommercialProjectProps {
+  commercialProject: CommercialProject;
+  childrenIndex: number;
+  parentIndex: number;
+}
+export interface JobProps {
+  job: Job;
+  parentIndex: number;
+}
+
 export interface TagsProps {
   index: number;
   tags: string[];
-  store: TagsStore;
+  store?: TagsStore;
+  useStore?: boolean;
 }

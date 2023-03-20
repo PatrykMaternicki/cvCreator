@@ -1,10 +1,9 @@
 import type { Project } from "@/types/project";
 import { defineStore } from "pinia";
 
-
 export interface TagsStore {
-  addTag(tag: String, index: number): void
-  removeTag(tag: String, index: number): void
+  addTag(tag: String, index: number): void;
+  removeTag(tag: String, index: number): void;
 }
 
 export const useProjectsStore = defineStore("projects", {

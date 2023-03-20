@@ -1,0 +1,26 @@
+.moleculesList {
+  padding: 0;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    color: $list-color;
+    font-family: $list-font-family;
+    padding: 20px 0;
+    line-height: 2rem;
+    border-bottom: 1px dashed $list-border-color;
+  }
+
+  &__textWrapper {
+    width: calc(100% - 40px);
+  }
+
+  &__buttonWrapper {
+    width: 30px;
+    height: 30px;
+  }
+  .atomsButton.onlyIcon {
+    padding: 0;
+  }
+}

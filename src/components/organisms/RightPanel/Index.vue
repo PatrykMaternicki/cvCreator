@@ -10,10 +10,10 @@
 </template>
 <script setup lang="ts">
 import type { DataProps } from "@/components/organisms/props";
-import PresentationProject from '@/components/organisms/RightPanel/Partials/Project.vue';
-import PresentationSkills from '@/components/organisms/RightPanel/Partials/Skills.vue';
-import PresentationHobbies from '@/components/organisms/RightPanel/Partials/Hobbies.vue';
-import PresentationPersonInfo from '@/components/organisms/RightPanel/Partials/PersonInfo.vue';
+import PresentationProject from "@/components/organisms/RightPanel/Partials/Project.vue";
+import PresentationSkills from "@/components/organisms/RightPanel/Partials/Skills.vue";
+import PresentationHobbies from "@/components/organisms/RightPanel/Partials/Hobbies.vue";
+import PresentationPersonInfo from "@/components/organisms/RightPanel/Partials/PersonInfo.vue";
 defineProps<DataProps>();
 </script>
 <style lang="scss">

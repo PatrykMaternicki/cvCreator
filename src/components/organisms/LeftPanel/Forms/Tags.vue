@@ -2,7 +2,7 @@
   <div class="organismsLeftPanelSkillsFormsTags">
     <div>
       <PresentationTag
-        @click="props.store.removeTag(tag, index)"
+        @click="handleRemove(tag)"
         :value="tag"
         v-for="tag in tags"
       >
@@ -13,7 +13,7 @@
       <PresentationTag v-show="edited" value="">
         <input
           v-model="newTag"
-          @change="handleChange"
+          @change="handleAdd"
           class="organismsLeftPanelSkillsFormsTags__hiddenInput"
           type="text"
           ref="input"
@@ -36,7 +36,11 @@ import PresentationTag from "@/components/atoms/Presentation/Tag/Index.vue";
 const edited = ref(false);
 const newTag = ref("");
 const input = ref<HTMLInputElement>();
-const props = defineProps<TagsProps>();
+const props = withDefaults(defineProps<TagsProps>(), { useStore: true });
+const emits = defineEmits<{
+  (e: "remove", tag: string): void;
+  (e: "add", tag: string): void;
+}>();
 
 const handleClick = () => {
   edited.value = true;
@@ -45,10 +49,18 @@ const handleClick = () => {
   });
 };
 
-const handleChange = () => {
-  props.store.addTag(newTag.value, props.index);
+const handleAdd = () => {
+  props.useStore
+    ? props.store && props.store.addTag(newTag.value, props.index)
+    : emits("add", newTag.value);
   edited.value = false;
   newTag.value = "";
+};
+
+const handleRemove = (tag: string) => {
+  props.useStore
+    ? props.store && props.store.removeTag(tag, props.index)
+    : emits("remove", tag);
 };
 </script>
 <style lang="scss">
