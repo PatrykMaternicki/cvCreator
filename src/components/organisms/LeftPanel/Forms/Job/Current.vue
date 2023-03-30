@@ -18,9 +18,9 @@
       ($event) => jobStore.updateField(parentIndex, 'companyName', $event)
     "
   />
-
+  <FormsNewCommercialProject :parent-index="parentIndex" />
   <div>
-    <PresentationHeadline text="Projekty" tag="h4" />
+    <PresentationHeadline text="Projekty" tag="h4" class="organismsJobCurrent__title"/>
     <template v-for="(commercialProject, index) in job.commercialProjects">
       <div class="organismsJobCurrent">
         <FormsCurrentCommercialProject
@@ -36,6 +36,7 @@
 import type { JobProps } from "@/components/organisms/props";
 import FormsText from "@/components/atoms/Forms/Text/Index.vue";
 import FormsCurrentCommercialProject from "@/components/organisms/LeftPanel/Forms/CommercialProject/Current.vue";
+import FormsNewCommercialProject from "@/components/organisms/LeftPanel/Forms/CommercialProject/New.vue";
 import PresentationHeadline from "@/components/atoms/Presentation/Headline/Index.vue";
 import { useJobStore } from "@/stores/job";
 const jobStore = useJobStore();
@@ -45,5 +46,9 @@ defineProps<JobProps>();
 <style lang="scss">
 .organismsJobCurrent {
   margin-top: 30px;
+}
+
+.organismsJobCurrent__title {
+  margin: 0;
 }
 </style>

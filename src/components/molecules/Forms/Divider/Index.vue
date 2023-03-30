@@ -1,9 +1,9 @@
 <template>
   <div class="moleculesFormsDivider" :class="{ hide: rotate }">
     <div class="moleculesFormsDivider__topWrapper">
-      <h2 class="moleculesFormsDivider__title">
+      <component :is="tag" :class="['moleculesFormsDivider__title', tag]">
         {{ title }}
-      </h2>
+      </component>
       <button class="moleculesFormsDivider__button" @click="handleRotate">
         <IconsTriangle :rotate="rotate" />
       </button>
@@ -22,7 +22,7 @@ import AnimationExpand from "@/components/atoms/Animations/Expand/Index.vue";
 import type { Props } from "@/components/molecules/Forms/Divider/props";
 import IconsTriangle from "@/components/atoms/Icons/Triangle/Index.vue";
 import { ref } from "vue";
-const props = withDefaults(defineProps<Props>(), { close: true });
+const props = withDefaults(defineProps<Props>(), { close: true, tag: "h2" });
 const rotate = ref(props.close);
 const handleRotate = () => (rotate.value = !rotate.value);
 </script>

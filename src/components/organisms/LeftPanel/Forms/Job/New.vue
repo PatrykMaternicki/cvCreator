@@ -18,7 +18,11 @@
     :model-value="companyName"
     @update:companyName="($event) => (companyName = $event)"
   />
-  <PresentationHeadline tag="h4" text="Okres" class="organismsJobNew__periodTitle"/>
+  <PresentationHeadline
+    tag="h4"
+    text="Okres"
+    class="organismsJobNew__periodTitle"
+  />
   <div class="organismsJobNew__flexbox">
     <FormsText
       label="Od"
@@ -37,6 +41,7 @@
   </div>
   <div class="organismsJobNew__buttonWrapper">
     <AtomsButton
+      class="organismsJobNew__button"
       text="Dodaj stanowisko pracy"
       :disabled="hasDisabled"
       :outline="true"
@@ -50,7 +55,7 @@ import FormsText from "@/components/atoms/Forms/Text/Index.vue";
 import AtomsButton from "@/components/atoms/Button/Index.vue";
 import PresentationHeadline from "@/components/atoms/Presentation/Headline/Index.vue";
 import { useJobStore } from "@/stores/job";
-import { Periods } from '@/models/periods';
+import { Periods } from "@/models/periods";
 import { Job } from "@/models/job";
 import { ref, computed } from "vue";
 import { isMoreThanZero } from "@/helpers/operations";
@@ -61,19 +66,28 @@ const jobPosition = ref("");
 const from = ref("");
 const to = ref("");
 const addJob = () => {
-  jobStore.addJob(new Job(companyName.value, jobPosition.value, new Periods(from.value, to.value), []))
-  to.value = '';
-  from.value = '';
-  jobPosition.value = '';
-  companyName.value = '';
-}
+  jobStore.addJob(
+    new Job(
+      companyName.value,
+      jobPosition.value,
+      new Periods(from.value, to.value),
+      []
+    )
+  );
+  to.value = "";
+  from.value = "";
+  jobPosition.value = "";
+  companyName.value = "";
+};
 
 const hasDisabled = computed(() =>
-  isMoreThanZero(companyName) && isMoreThanZero(jobPosition) && isMoreThanZero(from) && isMoreThanZero(to)
+  isMoreThanZero(companyName) &&
+  isMoreThanZero(jobPosition) &&
+  isMoreThanZero(from) &&
+  isMoreThanZero(to)
     ? false
     : true
 );
-
 </script>
 <style lang="scss">
 .organismsJobNew {
@@ -89,6 +103,10 @@ const hasDisabled = computed(() =>
     width: 50%;
     margin: 0 auto;
     margin-bottom: 20px;
+  }
+
+  &__button {
+    height: 40px;
   }
 
   &__periodTitle {

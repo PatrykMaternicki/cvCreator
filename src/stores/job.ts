@@ -10,7 +10,7 @@ export const useJobStore = defineStore("job", {
       this.jobs = jobs;
     },
     addJob(job: Job) {
-      this.jobs.push(job);
+      this.jobs.unshift(job);
     },
     removeJob(job: Job) {
       this.jobs = this.jobs.filter((item) => item !== job);
@@ -49,6 +49,14 @@ export const useJobStore = defineStore("job", {
       this.jobs[parentIndex].commercialProjects[childrenIndex].duties.push(
         text
       );
+    },
+
+    addCommercialProject(text: string, parentIndex: number) {
+      this.jobs[parentIndex].commercialProjects.unshift({
+        name: text,
+        technology: [],
+        duties: [],
+      });
     },
   },
 });

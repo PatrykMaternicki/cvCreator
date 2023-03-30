@@ -1,5 +1,5 @@
 <template>
-  <FormsDivider :title="commercialProject.name">
+  <FormsDivider tag="h4" :title="commercialProject.name">
     <FormsTags
       @remove="($tag) => jobStore.removeTag($tag, parentIndex, childrenIndex)"
       @add="($tag) => jobStore.addTag($tag, parentIndex, childrenIndex)"
@@ -51,6 +51,6 @@ const isEmpty = computed(() => (newDuty.value ? false : true));
 </script>
 <style lang="scss">
 .organimsCommercialProjectCurrent {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 </style>

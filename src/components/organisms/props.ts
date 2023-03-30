@@ -56,6 +56,10 @@ export interface CommercialProjectProps {
   childrenIndex: number;
   parentIndex: number;
 }
+
+export interface CommercialNewProjectProps {
+  parentIndex: number;
+}
 export interface JobProps {
   job: Job;
   parentIndex: number;

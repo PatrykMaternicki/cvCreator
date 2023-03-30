@@ -1,12 +1,13 @@
 <template>
   <FormsDivider title="Stanowiska pracy">
-    <FormJobNew />
-    <FormJobCurrent
-      v-for="(job, index) in jobs"
-      :key="index"
-      :parent-index="index"
-      :job="job"
-    />
+    <FormJobNew  />
+    <div class="organismsFormsJob" v-for="(job, index) in jobs">
+      <FormJobCurrent
+        :key="index"
+        :parent-index="index"
+        :job="job"
+      />
+    </div>
   </FormsDivider>
 </template>
 <script setup lang="ts">
@@ -16,3 +17,11 @@ import FormJobNew from "@/components/organisms/LeftPanel/Forms/Job/New.vue";
 import type { JobsProps } from "@/components/organisms/props";
 defineProps<JobsProps>();
 </script>
+<style lang="scss">
+.organismsFormsJob {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+</style>
