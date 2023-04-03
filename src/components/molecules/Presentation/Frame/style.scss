@@ -14,6 +14,13 @@
     padding: 5px 0;
   }
 
+  &__subList {
+
+    li::marker {
+      color: var(--color-text);
+    }
+  }
+
   &__headline {
     &.upper {
       text-transform: uppercase;
