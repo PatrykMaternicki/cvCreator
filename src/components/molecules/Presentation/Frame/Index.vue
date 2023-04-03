@@ -11,12 +11,30 @@ defineProps<PresentationFrameProps>();
         v-for="item in section"
         :key="item.key"
       >
-        <span class="moleculesPresentationFrame__boldText" v-if="item.label">
-          {{ item.label }}:
-        </span>
-        <span>
-          {{ data[item.key] }}
-        </span>
+        <template v-if="item.type">
+          <ul class="moleculesPresentationFrame__list">
+            <li v-for="subItem in data[item.key]">
+              <RecursiveFrame :data="subItem" :section="item.subsection" />
+            </li>
+          </ul>
+        </template>
+        <template v-else>
+          <template v-if="item.isArray">
+            <ul class="moleculesPresentationFrame__subList">
+              <li v-for="row in data[item.key]">
+                {{ row }}
+              </li>
+            </ul>
+          </template>
+          <template v-else>
+            <span class="moleculesPresentationFrame__boldText" v-if="item.label">
+              {{ item.label }}:
+            </span>
+            <span>
+              {{ data[item.key] }}
+            </span>
+          </template>
+        </template>
       </li>
     </ul>
   </div>

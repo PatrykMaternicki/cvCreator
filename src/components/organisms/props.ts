@@ -26,6 +26,10 @@ export interface RepresentationProject {
   project: Project;
 }
 
+export interface RepresentationJob {
+  job: Job;
+}
+
 export interface ProjectProp {
   project: Omit<Project, "tags">;
   index: number;

@@ -20,7 +20,11 @@
   />
   <FormsNewCommercialProject :parent-index="parentIndex" />
   <div>
-    <PresentationHeadline text="Projekty" tag="h4" class="organismsJobCurrent__title"/>
+    <PresentationHeadline
+      text="Projekty"
+      tag="h4"
+      class="organismsJobCurrent__title"
+    />
     <template v-for="(commercialProject, index) in job.commercialProjects">
       <div class="organismsJobCurrent">
         <FormsCurrentCommercialProject

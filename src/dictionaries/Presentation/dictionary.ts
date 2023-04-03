@@ -1,6 +1,9 @@
 export type PresentationSection = {
   key: string;
   label: string | null;
+  type?: "list" | "sublist";
+  subsection?: Array<PresentationSection>;
+  isArray?: boolean;
 };
 
 interface Dictionary {
@@ -12,6 +15,43 @@ export const PersonelInfoPresentationDictionary: Dictionary = {
     { key: "mobilePhone", label: "Mobile" },
     { key: "email", label: null },
     { key: "fullAddress", label: null },
+  ],
+};
+
+export const JobsPresentationDictionary: Dictionary = {
+  dictionary: [
+    {
+      key: "position",
+      label: null,
+    },
+    {
+      key: "companyNameWithPeriod",
+      label: null,
+    },
+    {
+      key: "projects",
+      label: "Projects",
+    },
+    {
+      label: "",
+      type: "list",
+      key: "commercialProjects",
+      subsection: [
+        {
+          key: "name",
+          label: "",
+        },
+        {
+          key: "concatTechnology",
+          label: "Technology",
+        },
+        {
+          key: "duties",
+          label: "Duties",
+          isArray: true
+        },
+      ],
+    },
   ],
 };
 

@@ -1,12 +1,8 @@
 <template>
   <FormsDivider title="Stanowiska pracy">
-    <FormJobNew  />
+    <FormJobNew />
     <div class="organismsFormsJob" v-for="(job, index) in jobs">
-      <FormJobCurrent
-        :key="index"
-        :parent-index="index"
-        :job="job"
-      />
+      <FormJobCurrent :key="index" :parent-index="index" :job="job" />
     </div>
   </FormsDivider>
 </template>
