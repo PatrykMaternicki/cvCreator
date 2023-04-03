@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { PresentationFrameProps } from "@/components/molecules/Presentation/Frame/props";
 import "@/components/molecules/Presentation/Frame/style.scss";
+import PresentationHeadline from "@/components/molecules/Presentation/Headline/Index.vue";
+
 defineProps<PresentationFrameProps>();
 </script>
 <template>
@@ -27,12 +29,23 @@ defineProps<PresentationFrameProps>();
             </ul>
           </template>
           <template v-else>
-            <span class="moleculesPresentationFrame__boldText" v-if="item.label">
-              {{ item.label }}:
-            </span>
-            <span>
-              {{ data[item.key] }}
-            </span>
+            <template v-if="item.headline">
+              <PresentationHeadline
+                :text="item.label || data[item.key]"
+                :modifier="item.headline"
+              />
+            </template>
+            <template v-else>
+              <span
+                v-if="item.label"
+                class="moleculesPresentationFrame__boldText"
+              >
+                {{ item.label }}:
+              </span>
+              <span>
+                {{ data[item.key] }}
+              </span>
+            </template>
           </template>
         </template>
       </li>

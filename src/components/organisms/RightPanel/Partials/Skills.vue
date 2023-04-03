@@ -18,10 +18,16 @@ const mapData = computed(() =>
   )
 );
 
-const mapSection = computed(() =>
-  props.data.map((item, index) => ({
+const mapSection = computed(() => {
+  const section = props.data.map((item, index) => ({
     key: `item${index}`,
     label: item.label,
-  }))
-);
+  }));
+  section.unshift({
+    key: "",
+    label: "Skills and Abilities",
+    headline: ["upper", "main"],
+  });
+  return section;
+});
 </script>

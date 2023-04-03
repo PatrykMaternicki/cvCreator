@@ -1,0 +1,19 @@
+.moleculesPresentationHeadline {
+  font-family: $frame-font-family;
+  &.upper {
+    text-transform: uppercase;
+  }
+
+  &.main {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &.color {
+    color: var(--color-text);
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+}

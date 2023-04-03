@@ -1,6 +1,9 @@
+export type Headlines = "upper" | "main" | "bold" | "color";
+
 export type PresentationSection = {
   key: string;
   label: string | null;
+  headline?: Array<Headlines>;
   type?: "list" | "sublist";
   subsection?: Array<PresentationSection>;
   isArray?: boolean;
@@ -12,6 +15,7 @@ interface Dictionary {
 
 export const PersonelInfoPresentationDictionary: Dictionary = {
   dictionary: [
+    { key: "", label: "Contact Details", headline: ["upper", "main"] },
     { key: "mobilePhone", label: "Mobile" },
     { key: "email", label: null },
     { key: "fullAddress", label: null },
@@ -40,6 +44,7 @@ export const JobsPresentationDictionary: Dictionary = {
         {
           key: "name",
           label: "",
+          headline: ["bold", "color"],
         },
         {
           key: "concatTechnology",
@@ -48,7 +53,7 @@ export const JobsPresentationDictionary: Dictionary = {
         {
           key: "duties",
           label: "Duties",
-          isArray: true
+          isArray: true,
         },
       ],
     },
@@ -60,6 +65,7 @@ export const ProjectsPresentationDictionary: Dictionary = {
     {
       key: "title",
       label: null,
+      headline: ["color", "bold"],
     },
     {
       key: "technology",

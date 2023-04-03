@@ -10,6 +10,7 @@ import PresentationFrame from "@/components/molecules/Presentation/Frame/Index.v
 import { JobsPresentationDictionary } from "@/dictionaries/Presentation/dictionary";
 import { computed } from "vue";
 import type { CommercialProject } from "@/types/commercialProject";
+import PresentationHeadline from "@/components/molecules/Presentation/Headline/Index.vue";
 
 const props = defineProps<RepresentationJob>();
 const mapJob = computed(() => ({
@@ -24,5 +25,4 @@ const mergeCompanyNameWithPeriod = () => {
 
 const mapCommercialProjects = (arr: Array<CommercialProject>) =>
   arr.map((item) => ({ ...item, concatTechnology: item.technology.join(",") }));
-
 </script>
