@@ -1,12 +1,14 @@
 .moleculesPresentationHeadline {
   font-family: $frame-font-family;
+  margin: 0;
+
   &.upper {
     text-transform: uppercase;
   }
 
   &.main {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 12px;
   }
 
   &.color {

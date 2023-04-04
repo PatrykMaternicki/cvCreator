@@ -8,10 +8,11 @@ import { computed } from "vue";
 const props = defineProps<RepresentationData<string[]>>();
 
 const mapSection = computed(() => {
-  const data = props.data.map((item, index) => ({
-    key: `item${index}`,
+  const data = [{
+    key: `item0`,
     label: "",
-  }));
+  }];
+
   data.unshift({ key: "", label: "Hobbies", headline: ["upper", "main"] });
   return data;
 });

@@ -1,16 +1,24 @@
 <template>
   <div class="organismsRightPanel">
-    <PresentationPersonInfo :data="personInfo" />
-    <PresentationSkills :data="skills" />
-    <PresentationHobbies :data="hobbies" />
-    <PresentationHeadline text="Projects" :modifier="['main', 'upper']" />
-    <template :key="index" v-for="(project, index) in projects">
-      <PresentationProject :project="project" />
-    </template>
-    <PresentationHeadline text="Jobs" :modifier="['main', 'upper']" />
-    <template :key="index" v-for="(job, index) in jobs">
-      <PresentationJobs :job="job" />
-    </template>
+    <div class="organismsRightPanel__page">
+      <div>
+        <PresentationPersonInfo class="organismsRightPanel__item" :data="personInfo" />
+        <PresentationSkills class="organismsRightPanel__item" :data="skills" />
+        <PresentationHobbies  class="organismsRightPanel__item" :data="hobbies" />
+        <PresentationHeadline text="Projects" :modifier="['main', 'upper']" />
+        <template :key="index" v-for="(project, index) in projects">
+          <div class="organismsRightPanel__partial">
+            <PresentationProject :project="project" />
+          </div>
+        </template>
+      </div>
+      <div>
+        <PresentationHeadline text="Jobs" :modifier="['main', 'upper']" />
+        <template :key="index" v-for="(job, index) in jobs">
+          <PresentationJobs :job="job" />
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -26,7 +34,31 @@ defineProps<DataProps>();
 </script>
 <style lang="scss">
 .organismsRightPanel {
+  background-color: var(--secondary-100);
   width: calc(100% - 400px);
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &__page {
+    background-color: white;
+    display: flex;
+    margin: 2.5rem;
+    padding: 2.5rem;
+    gap: 40px;
+    width: 596px;
+    height: 842px;
+    margin: auto;
+    transform: scale(0.9)
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__partial {
+    margin-bottom: 5px;
+  }
 }
 </style>
