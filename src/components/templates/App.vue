@@ -1,4 +1,5 @@
 <template>
+  <OrganimsTopPanel />
   <OrganismsLeftPanel
     :hobbies="hobbies"
     :projects="projects"
@@ -17,6 +18,7 @@
 <script setup lang="ts">
 import OrganismsLeftPanel from "@/components/organisms/LeftPanel/Index.vue";
 import OrganismsRightPanel from "@/components/organisms/RightPanel/Index.vue";
+import OrganimsTopPanel from "@/components/organisms/TopPanel/Navbar.vue";
 import { useHobbiesStore } from "@/stores/hobbies";
 import { useJobStore } from "@/stores/job";
 import { usePersonInfoStore } from "@/stores/personInfo";

@@ -1,3 +1,5 @@
+
+$big-font-button: 20px !default;
 $color-sidebar: var(--primary) !default;
 $input-text-color: var(--secondary) !default;
 $input-text-font-family: var(--font-main) !default;
@@ -16,3 +18,6 @@ $headline-text: var(--font-second) !default;
 $list-color: var(--secondary) !default;
 $list-font-family: var(--font-second) !default;
 $list-border-color: var(--secondary) !default;
+$navigation-topbar-color: #fff !default;
+$navigation-topbar-height: 64px !default;
+$navigation-topbar-border-color: var(--secondary);

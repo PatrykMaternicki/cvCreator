@@ -1,5 +1,5 @@
 <template>
-  <Sidebar>
+  <Sidebar :close="rotated">
     <div class="organismsLeftPanel">
       <h1 class="organismsLeftPanel__title">CV Creator</h1>
       <div class="organismsLeftPanel__container">
@@ -20,6 +20,10 @@ import FormsHobbies from "@/components/organisms/LeftPanel/Forms/Hobbies.vue";
 import FormsProjects from "@/components/organisms/LeftPanel/Forms/Projects.vue";
 import FormsJobs from "@/components/organisms/LeftPanel/Forms/Jobs.vue";
 import type { DataProps } from "@/components/organisms/props";
+import { useAppStore } from "@/stores/app";
+import { storeToRefs } from "pinia";
+const appStore = useAppStore();
+const { rotated} = storeToRefs(appStore);
 const props = defineProps<DataProps>();
 </script>
 <style lang="scss">

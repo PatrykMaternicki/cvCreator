@@ -5,4 +5,3 @@ import TemplatesApp from "@/components/templates/App.vue";
 <template>
   <TemplatesApp />
 </template>
-}

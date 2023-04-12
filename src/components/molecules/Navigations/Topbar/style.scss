@@ -1,0 +1,10 @@
+.moleculesNavigationTopbar {
+  background-color: $navigation-topbar-color;
+  height: $navigation-topbar-height;
+  border-bottom: 1px solid $navigation-topbar-border-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem; 
+}
