@@ -4,6 +4,6 @@ export interface Props {
   outline?: boolean;
   disabled?: boolean;
   bigText?: boolean;
-  type?: 'primary';
+  type?: "primary";
   animationFill?: boolean;
 }

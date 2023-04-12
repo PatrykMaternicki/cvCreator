@@ -8,13 +8,18 @@ import {
   faPlus,
   faMinus,
   faXmark,
-  faChevronRight
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import {
+import { faFilePdf, faFloppyDisk } from "@fortawesome/free-regular-svg-icons";
+library.add(
+  faUserSecret,
+  faPlus,
+  faMinus,
+  faXmark,
   faFilePdf,
   faFloppyDisk,
-} from '@fortawesome/free-regular-svg-icons';
-library.add(faUserSecret, faPlus, faMinus, faXmark, faFilePdf, faFloppyDisk, faChevronRight);
+  faChevronRight
+);
 
 import "@/assets/scss/index.scss";
 import App from "@/App.vue";

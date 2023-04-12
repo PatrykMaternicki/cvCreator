@@ -23,7 +23,7 @@ import type { DataProps } from "@/components/organisms/props";
 import { useAppStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
 const appStore = useAppStore();
-const { rotated} = storeToRefs(appStore);
+const { rotated } = storeToRefs(appStore);
 const props = defineProps<DataProps>();
 </script>
 <style lang="scss">

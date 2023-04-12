@@ -2,7 +2,16 @@
   <button
     class="atomsButton"
     :disabled="disabled"
-    :class="[{ rounded: rounded, outline: outline, onlyIcon: isText, bigText, animationFill}, setType]"
+    :class="[
+      {
+        rounded: rounded,
+        outline: outline,
+        onlyIcon: isText,
+        bigText,
+        animationFill,
+      },
+      setType,
+    ]"
     @click="$event => $emit('clicked', $event.target as HTMLBaseElement)"
   >
     {{ text }}
@@ -18,5 +27,5 @@ const props = withDefaults(defineProps<Props>(), {
   outline: false,
 });
 const isText = computed(() => (props.text ? "onlyText" : "onlyIcon"));
-const setType = computed(() => props.type ? props.type : '')
+const setType = computed(() => (props.type ? props.type : ""));
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="{wide: rotated}" class="organismsRightPanel">
+  <div :class="{ wide: rotated }" class="organismsRightPanel">
     <div class="organismsRightPanel__page">
       <div>
         <PresentationPersonInfo
